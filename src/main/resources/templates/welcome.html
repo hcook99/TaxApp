@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tax App</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <form action="#" th:action="@{/}" th:object="${taxInfo}" method="post">
+        <p>Income: <input type="number" th:field="*{income}" min="0" step="0.01" required></p>
+        <input type="radio" name="fileType" th:field="*{types}" value="Single" required/>Single<br>
+        <input type="radio" name="fileType" th:field="*{types}" value="Married Filing Jointly" required/>Married Filing Jointly<br>
+        <input type="radio" name="fileType" th:field="*{types}" value="Head of Household" required/>Head of Household<br>
+        <input type="submit">
+    </form>
+</body>
+</html>
